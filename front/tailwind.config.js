@@ -22,10 +22,18 @@ module.exports = {
         DEFAULT: "#c0ccda",
         light: "#e0e6ed",
         lightest: "#f9fafc",
+        900: "#111",
+        600: "#333",
+        700: "#222",
+        500: "#666",
+        400: "#444",
+        lighter:'#677',
+        another:'#ddd'
       },
       white: {
         light: "#fff",
         dull: "#fafafa",
+        duller:'#ebebeb'
       },
     },
     extend: {},

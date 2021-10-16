@@ -6,7 +6,7 @@ const Error = () => {
     ":-(",
     "(•_•)",
     "(⊙_⊙)",
-    "(ˉ﹃ˉ)",
+
     "(^///^)",
     "🕳",
     "X_X",
@@ -30,7 +30,7 @@ const Error = () => {
   }, [msg]);
   return (
     <div className="flex flex-col h-screen w-screen text-xs items-center justify-center p-4 text-black text-opacity-80">
-      <p className='text-7xl p-4 '>{msg[index] ? msg[index] : String(":(")}</p>
+      <p className="text-7xl p-4 ">{msg[index] ? msg[index] : String(":(")}</p>
       <span className="">page not found yet...</span>
     </div>
   );
