@@ -16,7 +16,7 @@ export default function Projects({ type }) {
   return (
     <div>
       <h1 className="text-2xl bold_as_thick text-gray-900 text-opacity-90 my-4">
-        {type === "live" ? "Live Events!" : "asdf"}
+        {type === "live" ? "Live Events!" : type}
       </h1>
       <div className="flex flex-col w-full md:items-center  flex-nowrap md:flex-row">
         {projectData.map((project) => (

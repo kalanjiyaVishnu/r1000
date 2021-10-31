@@ -1,3 +1,4 @@
+// import bgimg from "../src/images/background-image-for-website-1.jpg";
 const colors = require("tailwindcss/colors");
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],

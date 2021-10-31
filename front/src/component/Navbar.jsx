@@ -8,7 +8,7 @@ export default function NavBar(props) {
     <div className="w-full my-2 flex items-center mx-auto">
       <div className="flex items-center">
         <img src={Logo_M} className="w-16" alt="" />
-        <h1 className="font-medium">m1000</h1>
+        <h1 className="font-medium text-black">m1000</h1>
       </div>
       {Location.pathname === "/" && (
         <div className="ml-auto ">

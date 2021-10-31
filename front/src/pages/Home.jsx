@@ -9,6 +9,7 @@ export default function Home() {
     <Provider store={store}>
       <HomeTop />
       <Projects type="live" />
+      <Projects type="Upcomining Events" />
     </Provider>
   );
 }
