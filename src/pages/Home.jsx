@@ -4,18 +4,19 @@ import Projects from "../component/Projects";
 import { useSelector, useDispatch, Provider } from "react-redux";
 import { store } from "../redux/store";
 import { add } from "../actions";
+
 export default function Home() {
   return (
     <Provider store={store}>
       <HomeTop />
-      <Projects type="live" />
-      <Projects type="Upcomining Events" />
+      <Projects type="live" refLink={ROUTES.Live_fet}/>
+      <Projects type="Upcomining Events" refLink={ROUTES.up_fet}/>
     </Provider>
   );
 }
 const HomeTop = () => {
   const data = useSelector((store) => store);
-  console.log(data);
+  // console.log(data);
   const dispatch = useDispatch();
 
   return (

@@ -1,12 +1,13 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useProstate from "../hooks/use-prostate";
-export default function Projects({ type }) {
-  const { projectData, setProjects } = useProstate();
 
+export default function Projects({ type, refLink }) {
+  const { projectData, setProjects, isLoading, iserror } = useProstate(refLink);
+  console.log("isLoading", isLoading);
   const [showhint, setShowhint] = useState(false);
   useEffect(() => {
-    if (projectData.length === 0) {
+    if (!isLoading && projectData.length === 0) {
       setShowhint(true);
       setTimeout(() => {
         setShowhint(false);
@@ -19,11 +20,15 @@ export default function Projects({ type }) {
         {type === "live" ? "Live Events!" : type}
       </h1>
       <div className="flex flex-col w-full md:items-center  flex-nowrap md:flex-row">
-        {projectData.map((project) => (
-          <Project details={project} key={project.head} />
-        ))}
+        {isLoading ? (
+          <div>loading</div>
+        ) : (
+          projectData.map((project) => (
+            <Project details={project} key={project.head} />
+          ))
+        )}
       </div>
-      {projectData.length === 0 && (
+      {!isLoading && projectData.length === 0 && (
         <div className="text-center">
           <p>⚆_⚆</p> nothing to show
         </div>

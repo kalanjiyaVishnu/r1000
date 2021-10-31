@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import * as ROUTES from "./constansts/routes";
 import CreatePro from "./component/CreatePro";
-import bgimg from "../src/images/background-image-for-website-1.jpg";
+// import bgimg from "../src/images/background-image-for-website-1.jpg";
 export default function App() {
   return (
     <Router>
@@ -17,7 +17,6 @@ export default function App() {
           alt=""
         /> */}
         <Route
-          
           path="/"
           render={() => (
             <main className="h-screen bg-img">
