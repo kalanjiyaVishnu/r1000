@@ -53,7 +53,7 @@ export default function Projects({ type, refLink }) {
 
 const Project = ({ details }) => (
   <Link
-    className="mr-4 w-auto flex flex-col flex-nowrap rounded-md bg-cgray-700  text-white-light text-opacity-75 border-2 border-cgray-900 border-opacity-10 shadow-lg  my-2 p-4 md:w-1/2 hover:bg-gray-300  hover:text-black md:hover:-translate-y-2 transform transition ease-in-out duration-150 "
+    className="mr-4 w-auto flex flex-col flex-nowrap rounded-md bg-cgray-700  text-white-light text-opacity-75 border-2 border-cgray-900 border-opacity-10 shadow-lg  my-2 p-4 md:w-1/2 hover:bg-gray-300  hover:text-black md:max-w-xs md:hover:-translate-y-2 transform transition ease-in-out duration-150 "
     to={details.head.toLowerCase().replace(/\s/g, "")}
   >
     <div className="font-medium text-lg text-white-light">
