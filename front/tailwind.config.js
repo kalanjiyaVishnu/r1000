@@ -27,13 +27,17 @@ module.exports = {
         700: "#222",
         500: "#666",
         400: "#444",
-        lighter:'#677',
-        another:'#ddd'
+        lighter: "#677",
+        another: "#ddd",
       },
       white: {
         light: "#fff",
         dull: "#fafafa",
-        duller:'#ebebeb'
+        duller: "#ebebeb",
+      },
+      green: {
+        best: "#01875f",
+        darkk: "#056559",
       },
     },
     extend: {},

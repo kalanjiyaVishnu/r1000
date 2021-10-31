@@ -8,17 +8,22 @@ export default function CreatePro() {
       <form className="my-2">
         <InputText
           type="text"
-          contentHead="name of the project"
-          placeholder="my mobile app"
+          contentHead="Event Name"
+          placeholder="coders club"
         />
         <InputText
           type="text"
-          contentHead="squad name!"
-          placeholder="wild cheatas"
+          contentHead="what is it about"
+          placeholder="a all day coding carnival"
+        />
+        <InputText
+          type="text"
+          contentHead="Hosted by"
+          placeholder="organization name"
         />
         <div className="flex  mb-4">
           <div className="md:pr-4 md:w-1/6 text-center mr-3">
-            <label className="font-medium ">{"Add members"}</label>
+            <label className="font-medium ">Event Coordinators</label>
           </div>
           <div className="md:w-1/2 flex  items-center text-gray-800">
             <div className="mr-2 cursor-pointer hover:opacity-80 text-gray-800 flex items-center opacity-70">
@@ -69,7 +74,7 @@ export default function CreatePro() {
                 border-opacity-50 rounded w-full py-2 px-4  text-opacity-70 leading-tight focus:outline-none focus:bg-white focus:border-gray-800 focus:border-opacity-50 shadow-sm placeholder-gray-400 focus:bg-gray-300 transform transition-colors duration-300 focus:text-gray-800 focus:placeholder-gray-800"
                 id={"contentHead"}
                 type="text"
-                placeholder={`member ${index + 1} email`}
+                placeholder={`Head ${index + 1} email`}
               />
             </div>
           </div>
@@ -122,6 +127,7 @@ export default function CreatePro() {
             <textarea
               className="bg-gray-800 appearance-none border-2 border-gray-800
     border-opacity-5 rounded w-full py-2 px-4 text-white-light text-opacity-70 leading-tight focus:outline-none focus:bg-white focus:border-gray-800 focus:border-opacity-50 shadow-sm placeholder-gray-400 focus:bg-gray-300 transform transition-colors duration-300 focus:text-gray-800 focus:placeholder-gray-800"
+              placeholder="make it as long as you can"
             />
           </div>
         </div>
@@ -130,12 +136,15 @@ export default function CreatePro() {
   );
 }
 const InputText = ({ type, contentHead, placeholder }) => (
-  <div className="flex flex-nowrap w-full flex-col md:flex-row mb-6">
+  <div
+    className="flex flex-nowrap w-full flex-col md:flex-row mb-6
+   md:items-center"
+  >
     {/* md:items-center */}
-    <div className="md:pr-4 md:w-1/6 md:text-center">
+    <div className="md:pr-4 md:w-1/6 md:text-center ">
       <label
         htmlFor={contentHead}
-        className="block whitespace-nowrap mb-2 font-medium  "
+        className="block whitespace-nowrap  font-medium  "
       >
         {contentHead}
       </label>

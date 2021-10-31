@@ -1,6 +1,11 @@
 {
   "projects":[
-  { "head": "Assassination", "Memcount": 3, "TotOnline": 3 },
-  { "head": "Mobile app", "Memcount": 2, "TotOnline": 1 },
-  { "head": "Automation", "Memcount": 4, "TotOnline": 2 }
-]}
+  { "head": "Wev Dev", "Memcount": 3, "EndsIn": 3 ,"type":"team"},
+  { "head": "CodeKing", "Memcount": 2, "EndsIn": 1 ,"type":"solo"},
+  { "head": "Automation", "Memcount": 4, "EndsIn": 2 ,"type":"team"}
+],
+"Live":[
+  { "head": "Wsadfv", "Memcount": 3, "EndsIn": 3 ,"type":"team"},
+  { "head": "CodeKing", "Memcount": 2, "EndsIn": 1 ,"type":"solo"},
+  { "head": "Automation", "Memcount": 4, "EndsIn": 2 ,"type":"team"}]  
+}

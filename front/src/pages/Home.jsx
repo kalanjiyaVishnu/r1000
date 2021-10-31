@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Provider store={store}>
       <HomeTop />
-      <Projects />
+      <Projects type="live" />
     </Provider>
   );
 }
@@ -33,13 +33,13 @@ const HomeTop = () => {
           <p>join?</p>
         </Link>
       </div>
-      <button
+      {/* <button
         onClick={() => {
           dispatch(add());
         }}
       >
         click
-      </button>
+      </button> */}
     </div>
   );
 };

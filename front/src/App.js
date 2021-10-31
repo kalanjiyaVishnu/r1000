@@ -12,11 +12,12 @@ export default function App() {
     <Router>
       <Switch>
         <Route
-          path="/"
+          exact
+          path={["/", ROUTES.CREATE_NEW_PROJECT]}
           render={() => (
             <main className="h-screen">
-              <Navbar />
               <div className="container md:max-w-screen-2xl w-5/6 mx-auto">
+                <Navbar />
                 <Route path="/" exact render={() => <Home />} />
 
                 <Route
@@ -24,6 +25,7 @@ export default function App() {
                   path={ROUTES.CREATE_NEW_PROJECT}
                   component={CreatePro}
                 />
+                <Route path="*" component={Error} />
               </div>
             </main>
           )}
