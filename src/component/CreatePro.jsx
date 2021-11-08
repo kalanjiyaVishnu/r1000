@@ -1,4 +1,5 @@
 import { useState } from "react";
+import InputText from "./InputText";
 // import { FaCalendar, FaCalendarAlt } from "react-icons/fa";
 export default function CreatePro() {
   const [members, setMembers] = useState([{ id: 1, memEmail: "default" }]);
@@ -8,22 +9,18 @@ export default function CreatePro() {
       <form className="my-2">
         <InputText
           type="text"
-          contentHead="Event Name"
-          placeholder="coders club"
+          contentHead="Anime Name"
+          placeholder="one piece"
         />
         <InputText
           type="text"
           contentHead="what is it about"
-          placeholder="a all day coding carnival"
+          placeholder="a group of frds finding a tresure"
         />
-        <InputText
-          type="text"
-          contentHead="Hosted by"
-          placeholder="organization name"
-        />
+        <InputText type="text" contentHead="studio" placeholder="ufotables" />
         <div className="flex  mb-4">
           <div className="md:pr-4 md:w-1/6 text-center mr-3">
-            <label className="font-medium ">Event Coordinators</label>
+            <label className="font-medium ">watch along</label>
           </div>
           <div className="md:w-1/2 flex  items-center text-gray-800">
             <div className="mr-2 cursor-pointer hover:opacity-80 text-gray-800 flex items-center opacity-70">
@@ -74,7 +71,7 @@ export default function CreatePro() {
                 border-opacity-50 rounded w-full py-2 px-4  text-opacity-70 leading-tight focus:outline-none focus:bg-white focus:border-gray-800 focus:border-opacity-50 shadow-sm placeholder-gray-400 focus:bg-gray-300 transform transition-colors duration-300 focus:text-gray-800 focus:placeholder-gray-800"
                 id={"contentHead"}
                 type="text"
-                placeholder={`Head ${index + 1} email`}
+                placeholder={`user ${index + 1} email`}
               />
             </div>
           </div>
@@ -132,34 +129,11 @@ export default function CreatePro() {
           </div>
         </div>
       </form>
+      
     </div>
   );
 }
-const InputText = ({ type, contentHead, placeholder }) => (
-  <div
-    className="flex flex-nowrap w-full flex-col md:flex-row mb-6
-   md:items-center"
-  >
-    {/* md:items-center */}
-    <div className="md:pr-4 md:w-1/6 md:text-center ">
-      <label
-        htmlFor={contentHead}
-        className="block whitespace-nowrap  font-medium  "
-      >
-        {contentHead}
-      </label>
-    </div>
-    <div className="md:w-1/2">
-      <input
-        className="bg-gray-800 appearance-none border-2 border-gray-800
-    border-opacity-5 rounded w-full py-2 px-4 text-white-light text-opacity-70 leading-tight focus:outline-none focus:bg-white focus:border-gray-800 focus:border-opacity-50 shadow-sm placeholder-gray-400 focus:bg-gray-300 transform transition-colors duration-300 focus:text-gray-800 focus:placeholder-gray-800"
-        id={contentHead}
-        type={type}
-        placeholder={placeholder}
-      />
-    </div>
-  </div>
-);
+
 // 1.team name
 // 2.team member count
 // 3.member details

@@ -1,36 +1,42 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import useProstate from "../hooks/use-prostate";
+//import useProstate from "../hooks/use-prostate";
+import { data } from "../data";
+import Project from "../component/Project";
 
-export default function Projects({ type, refLink }) {
-  const { projectData, setProjects, isLoading, iserror } = useProstate(refLink);
-  console.log("isLoading", isLoading);
+export default function Projects({ data, type, refLink }) {
+  // const { projectData, setProjects, isLoading, iserror } = useProstate(refLink);
+  // const [projectData, setProjectData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  // console.log("isLoading", isLoading);
   const [showhint, setShowhint] = useState(false);
+  const [showmsg, setShowmsg] = useState("");
   useEffect(() => {
-    if (!isLoading && projectData.length === 0) {
+    if (data.feed.length === 0) {
+      setShowmsg("nothing to show");
       setShowhint(true);
       setTimeout(() => {
         setShowhint(false);
-      }, 3000);
+      }, 5000);
     }
-  }, [projectData]);
+  }, []);
+  // console.log("data from top type of ", data.feed, typeof data.feed);
   return (
-    <div>
+    <div className="mx-auto w-full md:w-screen">
       <h1 className="text-2xl bold_as_thick text-gray-900 text-opacity-90 my-4">
-        {type === "live" ? "Live Events!" : type}
+        {type}
       </h1>
-      <div className="flex flex-col w-full md:items-center  flex-nowrap md:flex-row">
+      <div className="flex flex-col w-full md:items-center md:flex-row flex-wrap">
         {isLoading ? (
           <div>loading</div>
         ) : (
-          projectData.map((project) => (
-            <Project details={project} key={project.head} />
+          data.feed.map((project) => (
+            <Project details={project} key={project.id} />
           ))
         )}
       </div>
-      {!isLoading && projectData.length === 0 && (
+      {!isLoading && showmsg && (
         <div className="text-center">
-          <p>⚆_⚆</p> nothing to show
+          <p>⚆_⚆</p> {showmsg}
         </div>
       )}
 
@@ -50,43 +56,6 @@ export default function Projects({ type, refLink }) {
     </div>
   );
 }
-
-const Project = ({ details }) => (
-  <Link
-    className="mr-4 w-auto flex flex-col flex-nowrap rounded-md bg-cgray-700  text-white-light text-opacity-75 border-2 border-cgray-900 border-opacity-10 shadow-lg  my-2 p-4 md:w-1/2 hover:bg-gray-300  hover:text-black md:max-w-xs md:hover:-translate-y-2 transform transition ease-in-out duration-150 "
-    to={details.head.toLowerCase().replace(/\s/g, "")}
-  >
-    <div className="font-medium text-lg text-white-light">
-      <span className="bg-green-best rounded-sm px-2 py-1 shadow-md">
-        {" "}
-        {details.head}
-      </span>
-    </div>
-    <div className="flex flex-nowrap py-2 w-full items-center md:justify-between">
-      <div className="mr-3 w-1/2 flex flex-col flex-nowrap md:w-auto">
-        <div className=" font-normal text-opacity-80  mb-2 whitespace-nowrap">
-          Type
-        </div>
-        {details.type === "team" ? (
-          <p>
-            Team{" - "}
-            <span className="font-bold ">
-              {details.Memcount > 9 ? details.Memcount : `0${details.Memcount}`}
-            </span>
-          </p>
-        ) : (
-          <span className="font-bold ">solo</span>
-        )}
-      </div>
-      <div className="mr-3 w-1/2 flex-nowrap">
-        <p className=" font-normal text-opacity-80  mb-2">DeadLine</p>
-        <span className="font-bold ">
-          {details.EndsIn > 9 ? details.EndsIn : `0${details.EndsIn}`}
-        </span>
-      </div>
-    </div>
-  </Link>
-);
 
 // { head: "Assassination", Memcount: 3, TotOnline: 3 },
 // { head: "Mobile app", Memcount: 2, TotOnline: 1 },

@@ -179,3 +179,27 @@ section {
   -ms-user-select: none;
   user-select: none;
 }
+.bringback {
+  z-index: -100;
+}
+.selector {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.apply-fade {
+  animation: fade 2s ease-in 3s forwards;
+}
+@keyframes fade {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+    transform: translateY(100%);
+    
+  }
+}

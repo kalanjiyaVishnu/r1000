@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { data } from "../data";
 export default function useProstate(ref_link) {
-console.log(data);
+  console.log(data);
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [iserror, setIserror] = useState(false);
@@ -26,9 +26,9 @@ console.log(data);
     //     setIserror(true);
     //   });
     // without json server
-    if (ref_link === "http://localhost:5000/upcomming") {
-      setProjects(data.upcomming);
-    } else setProjects(data.Live);
+    // if (ref_link === "http://localhost:5000/upcomming") {
+    //   setProjects(data.upcomming);
+    // } else setProjects(data.Live);
   }, [data]);
   return { projectData: projects, setProjects, isLoading, iserror };
 }
