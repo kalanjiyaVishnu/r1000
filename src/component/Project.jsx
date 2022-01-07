@@ -7,9 +7,9 @@ const Project = ({ details }) => (
       details.id
     }`}
   >
-    {/* {console.log("*************", details)} */}
-    <div className="font-medium text-lg text-white-light">
-      <span className="bg-green-best rounded-sm px-2 py-1 shadow-md">
+    {/* {console.log("*************", details.head.en_jp.length > 10 && details.head.en_jp.substring(0,10))} */}
+    <div className="font-medium text-lg text-white-light w-8">
+      <span className="bg-green-best rounded-sm px-2 py-1 shadow-md overflow-ellipsis">
         {" "}
         {details.head.en_jp || details.head.ja_jp}
       </span>

@@ -11,7 +11,7 @@ export default function NavBar({ handleSearch }) {
     if (Location.pathname.toLowerCase() === "/search") {
       setShowSearch(true);
       inputRef.current.focus();
-    } else setShowSearch(false);
+    }
   }, []);
   const inputRef = useRef(null);
 
@@ -34,18 +34,20 @@ export default function NavBar({ handleSearch }) {
       <div className="ml-auto flex items-center px-2">
         {!Location.pathname.startsWith("/anime") && (
           <div className="ml-auto flex items-center">
-            <input
-              type="text"
-              placeholder="one piece.."
-              className={getSearchClass()}
-              onChange={(e) => handleSearch(e)}
-              ref={inputRef}
-            />
+            {Location.pathname === "/search" && (
+              <input
+                type="text"
+                placeholder="one piece.."
+                className={getSearchClass()}
+                onChange={(e) => handleSearch(e)}
+                ref={inputRef}
+              />
+            )}
             <Link
               to="/search"
               className=" opacity-40 hover:opacity-90 transform transition-all duration-150 ease-in-out"
               onClick={() => {
-                inputRef.current.focus();
+                // if (inputRef) inputRef.current.focus();
               }}
             >
               <svg

@@ -63,7 +63,7 @@ export default function App() {
   const addNew = (payload) => {
     console.log("adding new ", payload);
     setAnimeData((old) => {
-      return { ...old, Live: [ ...old.Live, payload ] };
+      return { ...old, Live: [...old.Live, payload] };
     });
     console.log(animeData);
     return true;
